@@ -1,0 +1,10 @@
+[20180829 19:29:14-DEBUG][LogFactory.java:105][main]-- Logging initialized using 'org.mybatis.generator.logging.slf4j.Slf4jLoggingLogFactory@6b0c2d26' adapter.
+[20180829 19:29:14-DEBUG][DatabaseIntrospector.java:506][main]-- Retrieving column information for table "l_blog"
+[20180829 19:29:14-DEBUG][DatabaseIntrospector.java:563][main]-- Found column "id", data type 4, in table "db_blog..l_blog"
+[20180829 19:29:14-DEBUG][DatabaseIntrospector.java:563][main]-- Found column "title", data type 12, in table "db_blog..l_blog"
+[20180829 19:29:14-DEBUG][DatabaseIntrospector.java:563][main]-- Found column "summary", data type 12, in table "db_blog..l_blog"
+[20180829 19:29:14-DEBUG][DatabaseIntrospector.java:563][main]-- Found column "releaseDate", data type 93, in table "db_blog..l_blog"
+[20180829 19:29:14-DEBUG][DatabaseIntrospector.java:563][main]-- Found column "clickHit", data type 4, in table "db_blog..l_blog"
+[20180829 19:29:14-DEBUG][DatabaseIntrospector.java:563][main]-- Found column "replyHit", data type 4, in table "db_blog..l_blog"
+[20180829 19:29:14-DEBUG][DatabaseIntrospector.java:563][main]-- Found column "content", data type -1, in table "db_blog..l_blog"
+[20180829 19:29:14-DEBUG][DatabaseIntrospector.java:563][main]-- Found column "keyWord", data type 12, in table "db_blog..l_blog"
