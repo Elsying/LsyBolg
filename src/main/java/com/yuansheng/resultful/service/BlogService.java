@@ -10,9 +10,13 @@ public interface BlogService {
 
     public void addBlog(Blog blog);
 
-    public void deleteUserById(Integer id);
+    public int deleteUserById(Integer id);
 
     public void updateBlogById(Blog blog);
 
     public Blog findBlogById(Integer blogId);
+
+    public int updateSelective(Blog blog);
+
+
 }

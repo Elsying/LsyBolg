@@ -13,7 +13,7 @@
     <meta name="keywords" content="H+后台主题,后台bootstrap框架,会员中心主题,后台HTML,响应式后台">
     <meta name="description" content="H+是一个完全响应式，基于Bootstrap3最新版本开发的扁平化主题，她采用了主流的左右两栏式布局，使用了Html5+CSS3等现代技术">
 
-    <link rel="shortcut icon" href="favicon.ico"> <link href="css/bootstrap.min14ed.css?v=3.3.6" rel="stylesheet">
+    <link rel="shortcut icon" href="tt/favicon.ico"> <link href="css/bootstrap.min14ed.css?v=3.3.6" rel="stylesheet">
     <link href="css/font-awesome.min93e3.css?v=4.4.0" rel="stylesheet">
 
     <!-- jqgrid-->
@@ -21,6 +21,7 @@
 
     <link href="css/animate.min.css" rel="stylesheet">
     <link href="css/style.min862f.css?v=4.1.0" rel="stylesheet">
+    <link href="css/plugins/sweetalert/sweetalert.css" rel="stylesheet">
 
     <style>
         /* Additional style to fix warning dialog position */
@@ -38,11 +39,11 @@
         <div class="col-sm-12">
             <div class="ibox ">
                 <div class="ibox-title">
-                    <h5>博客列表</h5>
+                    <h5>文章管理</h5>
                 </div>
                 <div class="ibox-content">
                     <div class="jqGrid_wrapper">
-                        <table id="table_list_2"></table>
+                        <table id="table_list_2" frame=void></table>
                         <div id="pager_list_2"></div>
                     </div>
                 </div>
@@ -54,43 +55,146 @@
 <script src="js/jquery.min.js?v=2.1.4"></script>
 <script src="js/bootstrap.min.js?v=3.3.6"></script>
 <script src="js/plugins/peity/jquery.peity.min.js"></script>
+<script src="js/plugins/sweetalert/sweetalert.min.js"></script>
 <script src="js/plugins/jqgrid/i18n/grid.locale-cnffe4.js?0820"></script>
 <script src="js/plugins/jqgrid/jquery.jqGrid.minffe4.js?0820"></script>
 <script src="js/content.min.js?v=1.0.0"></script>
 <script>
-    $(document).ready(function(){$.jgrid.defaults.styleUI="Bootstrap";
+    $(document).ready(function aa(){$.jgrid.defaults.styleUI="Bootstrap";
+        listfile()
+
+        });
+
+    //后台查找展示表格
+    function listfile() {
         $.ajax({
-            url : "../users/ceshi",
+            url : "../users/bolg_list",
             type : "GET",
             dataType : "json",
             success : function(result) {
                 console.log(result);
-                var results=result.blog;
-                console.log(results);
                 var mydata=[{id:"1",invdate:"2010-05-24",name:"test",note:"note",tax:"10.00",total:"2111.00"},
                     {id:"2",invdate:"2010-05-25",name:"test2",note:"note2",tax:"20.00",total:"320.00"},
                 ];
                 $("#table_list_2").jqGrid({
-                    data:results,
+                    data:result.blog,
                     datatype:"local",height:450,autowidth:true,shrinkToFit:true,rowNum:20,rowList:[10,20,30],
-                    colNames:["序号","博客题目","博客摘要","发布日期","评论次数","回复次数","博客内容"],
-                    colModel:[{name:"id",index:"id",editable:true,width:60},
-                        {name:"title",index:"title",editable:true,width:90},
-                        {name:"summary",index:"summary",editable:true,width:100,align:"center"},
-                        {name:"releasedate",index:"releasedate",editable:true,width:80,align:"center"},
-                        {name:"clickhit",index:"clickhit",editable:true,width:80},
-                        {name:"replyhit",index:"replyhit",editable:true,width:80},
-                        {name:"content",index:"content",editable:true,width:100,sortable:false}],
-                    pager:"#pager_list_2",viewrecords:true,caption:"jqGrid 示例2",add:true,edit:true,addtext:"Add",edittext:"Edit",hidegrid:false
+                    colNames:["标题","摘要","日期","操作"],
+                    colModel:[
+                        // {name:"id",index:"id",editable:true,width:80,align:"center"},
+                        {name:"title",index:"title",editable:true,width:80,align:"center"},
+                        {name:"summary",index:"summary",editable:true,width:80,align:"center"},
+                        {name:"releasedate",index:"releasedate",editable:true,width:80,align:"center" },
+                        {name:"clickhit",index:"clickhit",editable:true,width:80,align:"center",
+                            formatter: function (cellvalue, options, rowObject) {
+                                // var  aa=JSON.stringify(rowObject)
+                                //  console.log("sdsdsds"+cellvalue);
+                                // console.log("rowObject"+JSON.stringify(rowObject));
+                                // return"<a href=\"/admain/blog_edit.html?param="+rowObject+"\" class=\"btn btn-white btn-sm\"><i\n" +
+                                //     "
+                                // "+rowObject.title+"                                                        class=\"fa fa-folder\"></i> 查看 </a>"
+                                // return "<a onclick=\"ulrHtml(\"+参数+\");\"class=\"btn btn-white btn-sm\"><i\n" +
+                                //  "class=\"fa fa-folder\"></i> 查看 </a>"+"<a  id= \"aaa("+rowObject.title+");\" class=\"btn btn-white btn-sm\"><i\n" +
+                                //  " class=\"fa fa-pencil\"></i> 编辑 </a>"
+
+                                return "<a onclick=\"editfile('"+rowObject.id+"')\" class=\"btn btn-white btn-sm\"><i\n" +
+                                    "class=\"fa fa-pencil\"></i> 编辑 </a>" + "<a onclick=\"deletefile('"+rowObject.id+"')\" class=\"btn btn-white btn-sm\"><i\n" +
+                                    "class=\"fa fa-trash\"></i> 删除 </a>"
+                            }},
+                        // {name:"replyhit",index:"replyhit",editable:true,width:80,align:"center"},
+                        // {name:"content",index:"content",editable:true,width:80  ,sortable:false,align:"center"}
+                    ],
+                    pager:"#pager_list_2",viewrecords:true,add:true,edit:true,addtext:"Add",edittext:"Edit",hidegrid:false,align:"center",
+                    gridComplete: function () {
+                        // $(this).closest('.ui-jqgrid-view').find('div.ui-jqgrid-hdiv').hide()
+                    },
                 });
-                $("#table_list_2").setSelection(4,true);$("#table_list_2").jqGrid("navGrid","#pager_list_2",{edit:true,add:true,del:true,search:true},{height:200,reloadAfterSubmit:true});$(window).bind("resize",function(){var width=$(".jqGrid_wrapper").width();$("#table_list_1").setGridWidth(width);$("#table_list_2").setGridWidth(width)})
+
+
+                $("#table_list_2").setSelection(4,true);$("#table_list_2").jqGrid("navGrid","#pager_list_2",{
+                    edit:false,
+                    add:true,
+                    del:false,
+                    search:true,
+                    addfunc :openDialogAdding, // 点击添加按钮，则调用openDialog4Adding方法
+                    editfunc : openDialogUpdating,// 点击编辑按钮，则调用openDialog4Updating方法
+                    delfunc : openDialogDeleting, // 点击删除按钮，则调用openDialog4Deleting方法
+                },{height:200,reloadAfterSubmit:true});$(window).bind("resize",function(){var width=$(".jqGrid_wrapper").width();$("#table_list_1").setGridWidth(width);$("#table_list_2").setGridWidth(width)})
                 //alert(result.
             },
             error : function(rtn) {
                 alert(rtn);
             }
         });
+    }
+    //编辑按钮事件
+    function editfile(num) {
+        // var str =JSON.stringify(num);
+        var toUrl = "/admain/blog_edit.html?id="+num;
+        console.log(toUrl);
+        window.location.href=toUrl;
+    }
+    //删除按钮事件
+    function deletefile(dnum) {
+        swal({
+            title: "您确定要删除这条信息吗",
+            text: "删除后将无法恢复，请谨慎操作！",
+            type: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#DD6B55",
+            confirmButtonText: "删除",
+            closeOnConfirm: false
+        }, function () {
+            $.ajax({
+                url: "../users/" + dnum,
+                type: "delete",
+                dataType: "json",
+
+                success: function (result) {
+                    swal("删除成功！", "您已经永久删除了这条信息。", "success");
+                    window.location.href = "/admain/file_list.html";
+                },
+                error: function (result) {
+                    swal({
+                        title: "提示",
+                        text: result.message,
+                    }, function () {
+                    });
+                }
+            });
         });
+
+    }
+
+    //重写添加
+    function openDialogAdding(){
+        window.location.href="blog_add.html";
+    }
+    //重写编辑
+    function openDialogUpdating(){
+        var gr= $("#table_list_2").jqGrid('getGridParam', 'selrow');//得到该行的数据
+        if (gr != null)
+        $("#table_list_2").jqGrid('editGridRow', gr, {
+            height : 300,
+            reloadAfterSubmit : false
+        });
+        else
+            swal({
+                title: "提示",
+                text: "Please Select Row",
+            }, function () {
+            });
+    }
+
+    //重写删除
+    function openDialogDeleting(){
+
+    }
+
+
+
+
+    $("#del_table_list_2").attr("href","www.baidu.com");
 
 </script>
 <script type="text/javascript" src="http://tajs.qq.com/stats?sId=9051096" charset="UTF-8"></script>

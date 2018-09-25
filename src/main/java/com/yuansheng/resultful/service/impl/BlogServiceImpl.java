@@ -21,13 +21,14 @@ public class BlogServiceImpl implements BlogService {
 
     @Override
     public void addBlog(Blog blog) {
-
+        blogMapper.insertSelective(blog);
     }
 
     @Override
-    public void deleteUserById(Integer id) {
-
+    public int deleteUserById(Integer id) {
+        return blogMapper.deleteByPrimaryKey(id);
     }
+
 
     @Override
     public void updateBlogById(Blog blog) {
@@ -36,6 +37,11 @@ public class BlogServiceImpl implements BlogService {
 
     @Override
     public Blog findBlogById(Integer blogId) {
-        return null;
+        return blogMapper.selectByPrimaryKey(blogId);
+    }
+
+    @Override
+    public int updateSelective(Blog blog) {
+        return blogMapper.updateByPrimaryKeySelective(blog);
     }
 }

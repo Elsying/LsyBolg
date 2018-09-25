@@ -60,13 +60,13 @@
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>spring-mvc</servlet-name>
-		<url-pattern>/</url-pattern>
+		<url-pattern>/*</url-pattern>
 	</servlet-mapping>
 	
 	<!-- 用于配置满足delete,put请求 -->
 	<filter>
 		<filter-name>HiddenHttpMethodFilter</filter-name>
-		<filter-class>org.springframework.web.filter.HiddenHttpMethodFilter</filter-class>
+		<filter-class>org.springframework.web.filter.HttpPutFormContentFilter</filter-class>
 	</filter>
 	<filter-mapping>
 		<filter-name>HiddenHttpMethodFilter</filter-name>
@@ -74,7 +74,7 @@
 		<servlet-name>spring-mvc</servlet-name>
 	</filter-mapping>
 	<welcome-file-list>
-		<welcome-file>user/index.jsp</welcome-file>
+		<welcome-file>admain/index.html</welcome-file>
 	</welcome-file-list>
 
 

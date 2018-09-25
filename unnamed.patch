@@ -1,0 +1,89 @@
+Index: src/main/resources/config.properties
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>GBK
+===================================================================
+--- src/main/resources/config.properties	(revision d18e5ce1d640e939ed04e7b17aa44e43e55f1352)
++++ src/main/resources/config.properties	(date 1536901713170)
+@@ -2,7 +2,7 @@
+ 
+ #jdbc druid config
+ validationQuery = SELECT 1
+-jdbc.url = jdbc:mysql://127.0.0.1:3306/db_blog?useUnicode=true&characterEncoding=utf-8
++jdbc.url = jdbc:mysql://127.0.0.1:3306/lsying?useUnicode=true&characterEncoding=utf-8
+ jdbc.username = root
+ jdbc.password = 3567zxcv
+ 
+Index: pom.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- pom.xml	(revision d18e5ce1d640e939ed04e7b17aa44e43e55f1352)
++++ pom.xml	(date 1536901071706)
+@@ -15,8 +15,7 @@
+         <log4j.version>1.2.17</log4j.version>  
+         <!-- shiro登录授权管理包版本 -->  
+         <shiro.version>1.4.0</shiro.version>  
+-   </properties> 
+-    
++   </properties>
+     <dependencies>
+         <!-- spring 依赖 -->
+ 		<dependency>
+@@ -235,12 +234,7 @@
+ 		</dependency>
+ 
+ 		<!-- https://mvnrepository.com/artifact/org.springframework/spring-context -->
+-
+-
+-
+-
+ 	</dependencies>
+-    
+     <build>
+         <finalName>maven01</finalName>
+         <plugins>
+@@ -265,5 +259,13 @@
+                 </configuration>
+             </plugin>
+         </plugins>
++		<resources>
++			<resource>
++				<directory>${basedir}/src/main/java</directory>
++				<includes>
++					<include>**/*.xml</include>
++				</includes>
++			</resource>
++		</resources>
+     </build>
+ </project>
+\ No newline at end of file
+Index: .idea/LsyBolg.iml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/LsyBolg.iml	(date 1536894838300)
++++ .idea/LsyBolg.iml	(date 1536894838300)
+@@ -0,0 +1,2 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<module type="JAVA_MODULE" version="4" />
+\ No newline at end of file
+Index: .idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/misc.xml	(revision d18e5ce1d640e939ed04e7b17aa44e43e55f1352)
++++ .idea/misc.xml	(date 1536893723722)
+@@ -4,6 +4,9 @@
+   <component name="FrameworkDetectionExcludesConfiguration">
+     <file type="web" url="file://$PROJECT_DIR$" />
+   </component>
++  <component name="JavaScriptSettings">
++    <option name="languageLevel" value="ES6" />
++  </component>
+   <component name="MavenProjectsManager">
+     <option name="originalFiles">
+       <list>

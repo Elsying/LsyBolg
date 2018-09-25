@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+
+
+<!-- Mirrored from www.zi-han.net/theme/hplus/projects.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 20 Jan 2016 14:19:44 GMT -->
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <title>H+ 后台主题UI框架 - 项目</title>
+    <meta name="keywords" content="H+后台主题,后台bootstrap框架,会员中心主题,后台HTML,响应式后台">
+    <meta name="description" content="H+是一个完全响应式，基于Bootstrap3最新版本开发的扁平化主题，她采用了主流的左右两栏式布局，使用了Html5+CSS3等现代技术">
+
+    <link rel="shortcut icon" href="favicon.ico">
+    <link href="css/bootstrap.min14ed.css?v=3.3.6" rel="stylesheet">
+    <link href="css/font-awesome.min93e3.css?v=4.4.0" rel="stylesheet">
+
+    <link href="css/animate.min.css" rel="stylesheet">
+    <link href="css/style.min862f.css?v=4.1.0" rel="stylesheet">
+    <link href="css/plugins/bootstrap-table/bootstrap-table.min.css" rel="stylesheet">
+
+
+</head>
+
+<body class="gray-bg">
+
+<div class="wrapper wrapper-content animated fadeInUp">
+    <div class="row">
+        <div class="col-sm-12">
+
+            <div class="ibox">
+                <div class="ibox-title">
+                    <h5>所有项目</h5>
+                </div>
+
+
+                <div class="ibox-content">
+                    <!--table start-->
+                    <div class="tabs-container">
+                        <ul class="nav nav-tabs">
+                            <li class="active"><a data-toggle="tab" href="#tab-1" aria-expanded="true"> 全部</a>
+                            </li>
+                            <li class=""><a data-toggle="tab" href="#tab-2" aria-expanded="false">原创</a>
+                            </li>
+                        </ul>
+                        <div class="tab-content">
+                            <div id="tab-1" class="tab-pane active">
+                                <div class="panel-body">
+                                    <!--刷新搜索  start-->
+                                    <div class="row m-b-sm m-t-sm">
+                                        <div class="col-md-1">
+                                            <button type="button" id="loading-example-btn" class="btn btn-white btn-sm">
+                                                <i class="fa fa-refresh"></i> 刷新
+                                            </button>
+                                        </div>
+                                        <div class="col-md-11">
+                                            <div class="input-group">
+                                                <input type="text" placeholder="请输入项目名称" class="input-sm form-control">
+                                                <span class="input-group-btn">
+                                        <button type="button" class="btn btn-sm btn-primary"> 搜索</button> </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--刷新搜索  end-->
+                                    <div class="project-list">
+
+
+                                        <!--table-->
+                                        <table class="table table-hover">
+                                            <tbody>
+                                            <tr>
+                                                <td class="project-status">
+                                            <span class="label label-primary">原创
+                                            </span>
+                                                </td>
+                                                <td class="project-title">
+                                                    <a href="project_detail.html">LIKE－一款能够让用户快速获得认同感的兴趣社交应用</a>
+                                                    <br/>
+                                                    <small>创建于 2014.08.15</small>
+                                                </td>
+
+                                                <td class="project-actions">
+                                                    <a href="projects.html#" class="btn btn-white btn-sm"><i
+                                                            class="fa fa-trash"></i> 查看 </a>
+                                                    <a href="projects.html#" class="btn btn-white btn-sm"><i
+                                                            class="fa fa-pencil"></i> 编辑 </a>
+                                                    <a href="#" onclick="ulrHtml('');"class="btn btn-white btn-sm"><i
+                                                            class="fa fa-folder"></i> 查看 </a>
+                                                    <a href="#" onclick="ulrHtml('');" class="btn btn-white btn-sm"><i
+                                                            class="fa fa-pencil"></i> 编辑 </a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="project-status">
+                                                    <span class="label label-primary"/>原创
+                                                </td>
+                                                <td class="project-title">
+                                                    <a href="project_detail.html">米莫说｜MiMO Show</a>
+                                                    <br/>
+                                                    <small>创建于 2014.08.15</small>
+                                                </td>
+
+
+                                                <td class="project-actions">
+
+<a onclick="ulrHtml('')" class="btn btn-white btn-sm"><i
+        class="fa fa-pencil"></i> 编辑 </a>
+<a onclick="ulrHtml('')" class="btn btn-white btn-sm"><i
+         class="fa fa-trash"></i> 删除 </a>
+
+
+
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="project-status">
+                                                    <span class="label label-default"/>转载
+                                                </td>
+                                                <td class="project-title">
+                                                    <a href="project_detail.html">商家与购物用户的交互试衣应用</a>
+                                                    <br/>
+                                                    <small>创建于 2014.08.15</small>
+                                                </td>
+                                                <td class="project-actions">
+                                                    <a href="projects.html#" class="btn btn-white btn-sm"><i
+                                                            class="fa fa-folder"></i> 查看 </a>
+                                                    <a href="projects.html#" class="btn btn-white btn-sm"><i
+                                                            class="fa fa-pencil"></i> 编辑 </a>
+                                                </td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+
+                                        <table class="table table-striped" id="table"></table>>
+                                </div>
+                            </div>
+                            <div id="tab-2" class="tab-pane">
+                                <div class="panel-body">
+                                    <strong>移动设备优先</strong>
+                                    <p>在 Bootstrap 2 中，我们对框架中的某些关键部分增加了对移动设备友好的样式。而在 Bootstrap 3
+                                        中，我们重写了整个框架，使其一开始就是对移动设备友好的。这次不是简单的增加一些可选的针对移动设备的样式，而是直接融合进了框架的内核中。也就是说，Bootstrap
+                                        是移动设备优先的。针对移动设备的样式融合进了框架的每个角落，而不是增加一个额外的文件。</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--table end-->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="js/jquery.min.js?v=2.1.4"></script>
+<script src="js/bootstrap.min.js?v=3.3.6"></script>
+<script src="js/content.min.js?v=1.0.0"></script>
+<script src="js/plugins/bootstrap-table/bootstrap-table.min.js"></script>
+<script src="js/plugins/bootstrap-table/bootstrap-table-mobile.min.js"></script>
+<script src="js/plugins/bootstrap-table/locale/bootstrap-table-zh-CN.min.js"></script>
+<script src="js/demo/bootstrap-table-demo.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $("#loading-example-btn").click(function () {
+            btn = $(this);
+            simpleLoad(btn, true);
+            simpleLoad(btn, false)
+        });
+        $('#table').bootstrapTable({
+            //url: '../users/bolg_list',
+            method: 'get',
+            toolbar: '#toolbar',        //工具按钮用哪个容器
+            cache: false, // 设置为 false 禁用 AJAX 数据缓存， 默认为true
+            striped: true,  //表格显示条纹，默认为false 设置为 true 会有隔行变色效果
+            pagination: true, // 在表格底部显示分页组件，默认false
+            pageList: [10, 20], // 设置页面可以显示的数据条数
+            pageSize: 10, // 页面数据条数
+            pageNumber: 1, // 首页页码
+            sortName: 'id', // 要排序的字段
+            sortOrder: 'desc', // 排序规则
+            sidePagination: "client", //表示服务端请求
+            columns: [
+            //     {
+            //     field: 'id',//返回json数据中的name
+            //     // title: 'Item ID,',// 表格表头显示文字
+            //     align: 'center', // 左右居中
+            //     valign: 'middle' // 上下居中
+            // },
+                {
+                field: 'title',//返回json数据中的name
+                // title: 'Ititle',// 表格表头显示文字
+                align: 'center', // 左右居中
+                valign: 'middle' // 上下居中
+            }, {
+                title: 'releasedate',// 表格表头显示文字
+                align: 'center', // 左右居中
+                valign: 'middle' // 上下居中
+            }],
+            onLoadSuccess: function () {  //加载成功时执行
+                console.info("加载成功");
+            },
+            onLoadError: function () {  //加载失败时执行
+                console.info("加载数据失败");
+            }
+        });
+        $.ajax({
+            type: "get",
+            url: '../users/bolg_list',
+            dataType:"json",
+            success : function(json) {
+                $("#table").bootstrapTable('load', json.blog);
+            }
+        });
+    });
+
+
+    function simpleLoad(btn, state) {
+        if (state) {
+            btn.children().addClass("fa-spin");
+            btn.contents().last().replaceWith(" Loading")
+        } else {
+            setTimeout(function () {
+                btn.children().removeClass("fa-spin");
+                btn.contents().last().replaceWith(" Refresh")
+            }, 2000)
+        }
+    }
+</script>
+<script type="text/javascript" src="http://tajs.qq.com/stats?sId=9051096" charset="UTF-8"></script>
+</body>
+
+<!-- Mirrored from www.zi-han.net/theme/hplus/projects.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 20 Jan 2016 14:19:44 GMT -->
+</html>

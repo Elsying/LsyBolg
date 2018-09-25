@@ -11,7 +11,8 @@ public class Blog {
 
     private String summary;//博客摘要'
 
-//    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
+    //时间戳转换指定格式
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
     private Date releasedate;//发布日期
 
     private Integer clickhit;//评论次数
