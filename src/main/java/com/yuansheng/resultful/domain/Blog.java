@@ -1,6 +1,8 @@
 package com.yuansheng.resultful.domain;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import org.springframework.format.annotation.DateTimeFormat;
+
 
 import java.util.Date;
 
@@ -12,7 +14,8 @@ public class Blog {
     private String summary;//博客摘要'
 
     //时间戳转换指定格式
-    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
+    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")//前台传来的String转换成Date
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss",timezone="GMT+8")//Date转换成String传给前台
     private Date releasedate;//发布日期
 
     private Integer clickhit;//评论次数

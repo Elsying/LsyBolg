@@ -73,6 +73,7 @@
 <script type="text/javascript" src="js/plugins/simditor/hotkeys.js"></script>
 <script type="text/javascript" src="js/plugins/simditor/simditor.js"></script>
 <script type="text/javascript" src="js/wangEditor.min.js"></script>
+<script type="text/javascript" src="js/timeutil.js"></script>
 <script>
     $(document).ready(function(){
         var E = window.wangEditor;
@@ -95,12 +96,13 @@
         );
         //提交修改博客
         $("#submitSave").click(function() {
+            console.log(getNowFormatDate());
             var title=$("#title").val();
             var content=editor.txt.html();
             var tex=editor.txt.text();
             console.log("content :"+content);
             console.log("tex :"+tex);
-            var data = {"title":title,"content":content};
+            var data = {"title":title,"content":content,"releasedate":getNowFormatDate()};
             // console.log(data);
             if (title===''){
                 swal({
