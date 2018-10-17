@@ -1,6 +1,7 @@
 package com.yuansheng.resultful.service.impl;
 
 import com.yuansheng.resultful.domain.Blog;
+import com.yuansheng.resultful.domain.BlogExtra;
 import com.yuansheng.resultful.mapper.BlogMapper;
 import com.yuansheng.resultful.service.BlogService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,6 +26,12 @@ public class BlogServiceImpl implements BlogService {
     }
 
     @Override
+    //添加博客和图片url
+    public void addBlogpic(BlogExtra blogExtra) {
+        blogMapper.insertSelective(blogExtra);
+    }
+
+    @Override
     public int deleteUserById(Integer id) {
         return blogMapper.deleteByPrimaryKey(id);
     }
@@ -43,5 +50,10 @@ public class BlogServiceImpl implements BlogService {
     @Override
     public int updateSelective(Blog blog) {
         return blogMapper.updateByPrimaryKeySelective(blog);
+    }
+
+    @Override
+    public List<BlogExtra> selectByAllandpic() {
+        return blogMapper.selectByAllandpic();
     }
 }

@@ -91,16 +91,22 @@
         //         leaveConfirm: '正在上传文件'
         //     }
         // });
+        var picurl=[];
         //初始化wangEditor
         var E = window.wangEditor;
         var editor = new E('#editor');
         editor.customConfig.uploadFileName ="fileData";
         editor.customConfig.uploadImgServer = '../users/uploadimg'; // 上传图片到服务器
+        // editor.customConfig.linkImgCallback = function (url) {
+        //     console.log(url) // url 即插入图片的地址
+        // };
         //监听函数在上传图片的不同阶段做相应处理
         editor.customConfig.uploadImgHooks = {
             customInsert: function (insertImg, result, editor) {
                 var url =result.data;
                 insertImg(url);//图片插入编辑框
+                picurl.push(url);
+                console.log("imguri:"+picurl);
             }
         };
         editor.create();
@@ -108,13 +114,13 @@
         var data = $("#addForm").serializeArray();
         //提交博客
         $("#submitSave").click(function() {
-            console.log(getNowFormatDate());
+            console.log("新的"+picurl.length);
             var title=$("#title").val();
             var content=editor.txt.html();
             var tex=editor.txt.text();
-            console.log("content :"+content);
-            console.log("tex :"+tex);
-            var data = {"title":title,"content":content,"releasedate":getNowFormatDate()};
+            // console.log("content :"+content);
+            // console.log("tex :"+tex);
+            var data = {"title":title,"content":content,"releasedate":getNowFormatDate(),"pic":picurl};
            // console.log(data);
             if (title===''){
                 swal({
@@ -132,12 +138,12 @@
             }
             else {
                 $.ajax({
-                    url: '/users/add',
+                    url: '/users/addblogpic',
                     type: 'POST',//GET 或POST
                     data: data,
                     dataType: 'json',
                     success: function (data) {
-                        console.log(data)
+                        //console.log(data);
                         swal({
                             title: "提示",
                             text: data.message,

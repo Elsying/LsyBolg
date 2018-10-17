@@ -1,43 +1,34 @@
 package com.yuansheng.resutful.controller;
 
 import com.yuansheng.resultful.domain.Blog;
-import com.yuansheng.resultful.domain.Ceshi;
+import com.yuansheng.resultful.domain.BlogExtra;
 import com.yuansheng.resultful.service.BlogService;
-import org.codehaus.jackson.map.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
-import org.springframework.web.servlet.ModelAndView;
 
 import com.yuansheng.resultful.core.common.JsonResult;
-import com.yuansheng.resultful.domain.User;
-import com.yuansheng.resultful.service.UserService;
 
 import javax.servlet.http.HttpServletRequest;
 import java.io.File;
 import java.io.IOException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.UUID;
 
 @Controller
 @RequestMapping(value = "/users")
 public class UserController {
-	@Autowired
-	private UserService entityService;
+
 	@Autowired
 	private BlogService blogService;
-	private static ObjectMapper mapper = new ObjectMapper();
 
 	//列出所有博客数据
 	@RequestMapping(value="/bolg_list",method = RequestMethod.GET)
 	@ResponseBody
 	public Map<String,Object> listBlog(){
 		Map<String,Object> result=new HashMap<String,Object> ();
-		result.put("blog",blogService.listBlog());
+		result.put("blog",blogService.selectByAllandpic());
 		return result;
 	}
 
@@ -109,7 +100,7 @@ public class UserController {
 		return blogService.findBlogById(blogId);
 	}
 
-	// 添加用户
+	// 添加
 	@RequestMapping(value = "/add", method = RequestMethod.POST, produces = "application/json;charset=UTF-8")
 	@ResponseBody
 	public String addBlog(Blog blog) {
@@ -117,6 +108,16 @@ public class UserController {
 		JsonResult jsonResult = JsonResult.getInstance(0, "添加成功");
 		return jsonResult.toString();
 	}
+
+	// 添加有图片的博客
+	@RequestMapping(value = "/addblogpic", method = RequestMethod.POST, produces = "application/json;charset=UTF-8")
+	@ResponseBody
+	public String addBlogpic(BlogExtra blogExtra) {
+		blogService.addBlogpic(blogExtra);
+		JsonResult jsonResult = JsonResult.getInstance(0, "添加成功");
+		return jsonResult.toString();
+	}
+
 
 
 

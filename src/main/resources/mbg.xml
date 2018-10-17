@@ -45,7 +45,7 @@
         <!--指定每个表生成策略-->
 
         <!--自动生成后记得注释，因为重新生成会覆盖，也可以写个类继承自动生成的-->
-        <!--<table  tableName="L_BLOG" domainObjectName="Blog" />-->
+        <table  tableName="l_pic" domainObjectName="Pic" />
 
 
         <!--  table  tableName="u_role" domainObjectName="URole" />

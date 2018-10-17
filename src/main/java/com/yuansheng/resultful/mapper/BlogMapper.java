@@ -3,6 +3,8 @@ package com.yuansheng.resultful.mapper;
 import com.yuansheng.resultful.domain.Blog;
 import com.yuansheng.resultful.domain.BlogExample;
 import java.util.List;
+
+import com.yuansheng.resultful.domain.BlogExtra;
 import org.apache.ibatis.annotations.Param;
 
 public interface BlogMapper {
@@ -35,4 +37,7 @@ public interface BlogMapper {
     int updateByPrimaryKeyWithBLOBs(Blog record);
 
     int updateByPrimaryKey(Blog record);
+
+    List<BlogExtra> selectByAllandpic();
+
 }

@@ -8,3 +8,58 @@
 [20180829 19:29:14-DEBUG][DatabaseIntrospector.java:563][main]-- Found column "replyHit", data type 4, in table "db_blog..l_blog"
 [20180829 19:29:14-DEBUG][DatabaseIntrospector.java:563][main]-- Found column "content", data type -1, in table "db_blog..l_blog"
 [20180829 19:29:14-DEBUG][DatabaseIntrospector.java:563][main]-- Found column "keyWord", data type 12, in table "db_blog..l_blog"
+[20181006 19:09:39-DEBUG][LogFactory.java:105][main]-- Logging initialized using 'org.mybatis.generator.logging.slf4j.Slf4jLoggingLogFactory@797badd3' adapter.
+[20181006 19:09:39-DEBUG][DatabaseIntrospector.java:506][main]-- Retrieving column information for table "l_pic"
+[20181006 19:09:39-DEBUG][DatabaseIntrospector.java:563][main]-- Found column "id", data type 4, in table "lsying..l_pic"
+[20181006 19:09:39-DEBUG][DatabaseIntrospector.java:563][main]-- Found column "url", data type 12, in table "lsying..l_pic"
+[20181006 19:09:39-DEBUG][DatabaseIntrospector.java:563][main]-- Found column "blog_id", data type 4, in table "lsying..l_pic"
+[20181006 19:12:17-DEBUG][LogFactory.java:105][main]-- Logging initialized using 'org.mybatis.generator.logging.slf4j.Slf4jLoggingLogFactory@797badd3' adapter.
+[20181006 19:12:17-DEBUG][DatabaseIntrospector.java:506][main]-- Retrieving column information for table "l_pic"
+[20181006 19:12:17-DEBUG][DatabaseIntrospector.java:563][main]-- Found column "id", data type 4, in table "lsying..l_pic"
+[20181006 19:12:17-DEBUG][DatabaseIntrospector.java:563][main]-- Found column "url", data type 12, in table "lsying..l_pic"
+[20181006 19:12:17-DEBUG][DatabaseIntrospector.java:563][main]-- Found column "blog_id", data type 4, in table "lsying..l_pic"
+[20181006 19:15:02-DEBUG][LogFactory.java:105][main]-- Logging initialized using 'org.mybatis.generator.logging.slf4j.Slf4jLoggingLogFactory@797badd3' adapter.
+[20181006 19:15:02-DEBUG][DatabaseIntrospector.java:506][main]-- Retrieving column information for table "l_pic"
+[20181006 19:15:02-DEBUG][DatabaseIntrospector.java:563][main]-- Found column "id", data type 4, in table "lsying..l_pic"
+[20181006 19:15:02-DEBUG][DatabaseIntrospector.java:563][main]-- Found column "url", data type 12, in table "lsying..l_pic"
+[20181006 19:15:02-DEBUG][DatabaseIntrospector.java:563][main]-- Found column "blog_id", data type 4, in table "lsying..l_pic"
+[20181006 19:24:19-DEBUG][LogFactory.java:105][main]-- Logging initialized using 'org.mybatis.generator.logging.slf4j.Slf4jLoggingLogFactory@797badd3' adapter.
+[20181006 19:24:19-DEBUG][DatabaseIntrospector.java:506][main]-- Retrieving column information for table "l_pic"
+[20181006 19:24:19-DEBUG][DatabaseIntrospector.java:563][main]-- Found column "id", data type 4, in table "lsying..l_pic"
+[20181006 19:24:19-DEBUG][DatabaseIntrospector.java:563][main]-- Found column "url", data type 12, in table "lsying..l_pic"
+[20181006 19:24:19-DEBUG][DatabaseIntrospector.java:563][main]-- Found column "blog_id", data type 4, in table "lsying..l_pic"
+[20181006 19:24:32-DEBUG][LogFactory.java:105][main]-- Logging initialized using 'org.mybatis.generator.logging.slf4j.Slf4jLoggingLogFactory@797badd3' adapter.
+[20181006 19:24:32-DEBUG][DatabaseIntrospector.java:506][main]-- Retrieving column information for table "l_pic"
+[20181006 19:24:32-DEBUG][DatabaseIntrospector.java:563][main]-- Found column "id", data type 4, in table "lsying..l_pic"
+[20181006 19:24:32-DEBUG][DatabaseIntrospector.java:563][main]-- Found column "url", data type 12, in table "lsying..l_pic"
+[20181006 19:24:32-DEBUG][DatabaseIntrospector.java:563][main]-- Found column "blog_id", data type 4, in table "lsying..l_pic"
+[20181006 20:12:09-DEBUG][LogFactory.java:105][main]-- Logging initialized using 'org.mybatis.generator.logging.slf4j.Slf4jLoggingLogFactory@797badd3' adapter.
+[20181006 20:12:09-DEBUG][DatabaseIntrospector.java:506][main]-- Retrieving column information for table "l_pic"
+[20181006 20:12:09-DEBUG][DatabaseIntrospector.java:563][main]-- Found column "id", data type 4, in table "lsying..l_pic"
+[20181006 20:12:09-DEBUG][DatabaseIntrospector.java:563][main]-- Found column "url", data type 12, in table "lsying..l_pic"
+[20181006 20:12:09-DEBUG][DatabaseIntrospector.java:563][main]-- Found column "blog_id", data type 4, in table "lsying..l_pic"
+[20181006 20:12:16-DEBUG][LogFactory.java:105][main]-- Logging initialized using 'org.mybatis.generator.logging.slf4j.Slf4jLoggingLogFactory@797badd3' adapter.
+[20181006 20:12:16-DEBUG][DatabaseIntrospector.java:506][main]-- Retrieving column information for table "l_pic"
+[20181006 20:12:16-DEBUG][DatabaseIntrospector.java:563][main]-- Found column "id", data type 4, in table "lsying..l_pic"
+[20181006 20:12:16-DEBUG][DatabaseIntrospector.java:563][main]-- Found column "url", data type 12, in table "lsying..l_pic"
+[20181006 20:12:16-DEBUG][DatabaseIntrospector.java:563][main]-- Found column "blog_id", data type 4, in table "lsying..l_pic"
+[20181006 20:49:22-DEBUG][LogFactory.java:105][main]-- Logging initialized using 'org.mybatis.generator.logging.slf4j.Slf4jLoggingLogFactory@797badd3' adapter.
+[20181006 20:49:22-DEBUG][DatabaseIntrospector.java:506][main]-- Retrieving column information for table "l_pic"
+[20181006 20:49:22-DEBUG][DatabaseIntrospector.java:563][main]-- Found column "id", data type 4, in table "lsying..l_pic"
+[20181006 20:49:22-DEBUG][DatabaseIntrospector.java:563][main]-- Found column "url", data type 12, in table "lsying..l_pic"
+[20181006 20:49:22-DEBUG][DatabaseIntrospector.java:563][main]-- Found column "blog_id", data type 4, in table "lsying..l_pic"
+[20181012 16:37:34-DEBUG][LogFactory.java:105][main]-- Logging initialized using 'org.mybatis.generator.logging.slf4j.Slf4jLoggingLogFactory@797badd3' adapter.
+[20181012 16:37:34-DEBUG][DatabaseIntrospector.java:506][main]-- Retrieving column information for table "l_pic"
+[20181012 16:37:34-DEBUG][DatabaseIntrospector.java:563][main]-- Found column "id", data type 4, in table "lsying..l_pic"
+[20181012 16:37:34-DEBUG][DatabaseIntrospector.java:563][main]-- Found column "url", data type 12, in table "lsying..l_pic"
+[20181012 16:37:34-DEBUG][DatabaseIntrospector.java:563][main]-- Found column "bid", data type 4, in table "lsying..l_pic"
+[20181014 13:46:30-DEBUG][LogFactory.java:105][main]-- Logging initialized using 'org.mybatis.generator.logging.slf4j.Slf4jLoggingLogFactory@797badd3' adapter.
+[20181014 13:46:30-DEBUG][DatabaseIntrospector.java:506][main]-- Retrieving column information for table "l_pic"
+[20181014 13:46:30-DEBUG][DatabaseIntrospector.java:563][main]-- Found column "id", data type 4, in table "lsying..l_pic"
+[20181014 13:46:30-DEBUG][DatabaseIntrospector.java:563][main]-- Found column "url", data type 12, in table "lsying..l_pic"
+[20181014 13:46:30-DEBUG][DatabaseIntrospector.java:563][main]-- Found column "bid", data type 4, in table "lsying..l_pic"
+[20181014 13:47:09-DEBUG][LogFactory.java:105][main]-- Logging initialized using 'org.mybatis.generator.logging.slf4j.Slf4jLoggingLogFactory@797badd3' adapter.
+[20181014 13:47:09-DEBUG][DatabaseIntrospector.java:506][main]-- Retrieving column information for table "l_pic"
+[20181014 13:47:09-DEBUG][DatabaseIntrospector.java:563][main]-- Found column "id", data type 4, in table "lsying..l_pic"
+[20181014 13:47:09-DEBUG][DatabaseIntrospector.java:563][main]-- Found column "url", data type 12, in table "lsying..l_pic"
+[20181014 13:47:09-DEBUG][DatabaseIntrospector.java:563][main]-- Found column "bid", data type 4, in table "lsying..l_pic"
